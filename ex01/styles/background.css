@@ -1,0 +1,22 @@
+body {
+    /* 배경화면 속성 */
+    background-image: url("../images/Landscape.jpg");
+    
+    /* 반복하지 않음 */
+    background-repeat: no-repeat;
+    
+    /* y축 방향으로만 반복 */
+    /* background-repeat: repeat-y; */
+
+    /* fixed : 배경화면 고정 */
+    background-attachment: fixed;
+    
+    /* 배경화면 위치 */
+    background-position: bottom;
+
+    background-size: 100%;
+
+    /* 축약형 */
+    /* background: 이미지 position / size  반복여부 부착방식 색상 */
+    background: url("../images/Landscape.jpg") bottom / 100% no-repeat fixed lightgray;
+}
