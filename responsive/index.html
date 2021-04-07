@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        /* 모든 브라우저에서 적용되는 기본 스타일 */
-        /* 전체 선택자로 기본 스타일을 지정 */
+    /* 모든 브라우저에 적용되는 기본 스타일 */
+    /* 전체 선택자로 기본 스타일을 지정 */
     * {
         margin: 0;
         padding: 0;
@@ -131,15 +131,15 @@
 
     .photo {
         display: none;
-        /* 기본적으로 사진을 표시하지 음 */
+        /* 기본적으로 사진을 표시하지 않음 */
     }
 
     #container section:nth-child(odd) {
         background-color: #eee;
-    }
+    }        
 
-    /* 스크린 사이즈가 768px 이상 -> 태블릿으로 가정 */
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* 스크린 사이즈가 768px 이상 -> 태블릿 가정 */
+    @media screen and (min-width: 768px) {
         header {
             height: 400px;
         }
@@ -147,13 +147,13 @@
         /* 2단 레이아웃 구성 */
         #intro, #section1 {
             float: left;
-            width: 45%;
+            width: 40%;
             margin: 0;
         }
 
         /* section2의 이전 요소 float 해제 */
         #section2 {
-            clear: left;
+            clear:left;
         }
 
         /* 사진 영역 표시 */
@@ -168,7 +168,7 @@
         }
     }
 
-    /* 스크린 사이즈가 1024px 이상 -> PC로 가정 */
+    /* 스크린 사이즈 1024px 이상 -> PC 가정 */
     @media screen and (min-width: 1024px) {
         header {
             height: 500px;
@@ -181,7 +181,7 @@
         /* 이미지를 번갈아가며 표시 : left, right */
         section:nth-child(2n) img {
             /* 짝수번째 섹션의 이미지를 왼쪽으로 부유 */
-            float: left;
+            float: left; 
         }
 
         section:nth-child(2n+1) img {
