@@ -97,9 +97,10 @@
                         //  UI에 반영
                         $("#info").html(response);
                     }, 
-                    error: function(response, // 응답 정보
-                        status,     //  응답 코드
-                        error) {    //  에러 정보 객체
+                    error: function(response, status, error) {    
+                        // 응답 정보
+                        //  응답 코드
+                        //  에러 정보 객체
                         //  요청이 실패했을 때 실행될 콜백함수
                         console.error("response:", response);
                         console.error("status:", status);
