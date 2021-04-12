@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Routing</title>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <!-- Vue 렌더링 영역 -->
+    <div id="app">
+        <h1>Routung</h1>
+        <!-- 메뉴 영역 -->
+        <ul>
+            <li>
+                <router-link to="/">Main Page</routing-link>
+            </li>
+            <li>
+                <router-link to="/sub">Sub Page/router-link>
+            </li>
+            <li>
+                <router-link v-bind:to="'/param/' + param1">파라미터 전송</router-link>
+            </li>
+            </li>
+        </ul>
+        <h1>Content Area</h1>
+        <!-- 실제 컨텐츠가 표시될 영역 -->
+        <router-view></router-view>
+    </div>
+
+    <script>
+        var main = {
+            template: "<div><h2>Main</h2></div>",
+            created: function() {
+                console.log("Main Component: created");
+            },
+            mounted: function() {
+                console.log("Main Component: mounted");
+            },
+            destroyed: function() {
+                console.log("Main Component: destroued");
+            }
+        };
+
+        var sub = {
+            template: "<div><h2>Sub</h2></div>",
+            created: function() {
+                console.log("Sub Component: created");
+            },
+            mounted: function() {
+                console.log("Sub Component: mounted");
+            },
+            destroyed: function() {
+                console.log("Sub Component: destroued");
+            }
+        };
+
+        var paramComp = {
+            template: "<div><h2>{{ paramVal }}</h2></div>",
+            computed: {
+                paramVal: function() {
+                    return this.$route.params.param1;
+                }
+            }
+        };
+
+        // 클라이언트 라우팅 구현을 위한 라우터 선언
+        var router = new VueRouter({
+            // 링크 정보
+            routes: [
+                { path: "/", component: main }, // / -> main 컴포넌트 표사
+                { path: "/sub", component: sub },
+                // 동적 파라미터 전달
+                { path: '/param:param1'}
+            ]
+        })
+    </script>
+</body>
+</html>
